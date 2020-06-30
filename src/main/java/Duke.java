@@ -19,7 +19,7 @@ public class Duke {
                 case "list":
                     for ( Task task:
                             todo) {
-                        System.out.println( todo.indexOf(task)+1 + ". " + task.getStatusIcon() + " " + task.description);
+                        System.out.println( todo.indexOf(task)+1 + ". " + task.toString());
                     }
                     if (todo.size() == 0) {
                         System.out.println("Your life is empty now bruh");
@@ -30,12 +30,36 @@ public class Duke {
                     Task task = todo.get(taskID);
                     task.markAsDone();
                     System.out.println("Gratz, you finished this dawg :");
-                    System.out.println(task.getStatusIcon()+ task.description);
+                    System.out.println(task.toString());
+                    break;
+                case "todo":
+                    String fullTask = sc.nextLine();
+                    String name = fullTask.split("/")[0];
+                    Todo td = new Todo(name);
+                    todo.add(td);
+                    System.out.println("Aight new task for you: \n" + td.toString());
+                    System.out.println("Now you got " + todo.size() + " task(s) waiting man");
+                    break;
+                case "deadline":
+                    String fullDL = sc.nextLine();
+                    String DLname = fullDL.split("/by")[0];
+                    String DLtime = fullDL.split("/by")[1];
+                    Deadline dl = new Deadline(DLname, DLtime);
+                    todo.add(dl);
+                    System.out.println("Aight new task for you: \n" + dl.toString());
+                    System.out.println("Now you got " + todo.size() + " task(s) waiting man");
+                    break;
+                case "event":
+                    String fullE = sc.nextLine();
+                    String EventName = fullE.split("/at")[0];
+                    String EventTime = fullE.split("/at")[1];
+                    Event e = new Event(EventName, EventTime);
+                    todo.add(e);
+                    System.out.println("Aight new task for you: \n" + e.toString());
+                    System.out.println("Now you got " + todo.size() + " task(s) waiting man");
                     break;
                 default:
-                    String fullTask = command + sc.nextLine();
-                    todo.add(new Task(fullTask));
-                    System.out.println("okay you need to: " + fullTask);
+                    System.out.println("whatchu talking about willis");
             }
         }
     }
