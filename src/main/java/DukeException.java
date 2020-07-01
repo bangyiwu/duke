@@ -2,7 +2,7 @@ package main.java;
 
 public class DukeException
         extends RuntimeException {
-    public DukeException(String errorMessage, Throwable err) {
-        super(errorMessage, err);
+    public DukeException(String errorMessage) {
+        super(errorMessage);
     }
 }

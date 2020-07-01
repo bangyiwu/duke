@@ -36,20 +36,16 @@ public class Duke {
                     String name = sc.nextLine();
                     try {
                         if (name.isEmpty()) {
-                            System.out.println("You forgot to enter a task");
-                            throw new IllegalArgumentException("no task indicated");
+                            throw new DukeException("no task indicated");
                         } else {
                             Todo td = new Todo(name);
                             todo.add(td);
                             System.out.println("Aight new task for you: \n" + td.toString());
                             System.out.println("Now you got " + todo.size() + " task(s) waiting man");
-                        }} catch (IllegalArgumentException e){
-                            if (name.isEmpty() || name == " ") {
-                                throw new DukeException(
-                                        "Enter that thingy you want to do", e
-                                );
-                            }
-                    }
+                        }
+                    } catch (DukeException e){
+                        System.out.println("Enter a task after todo!");
+                        }
                     break;
                 case "deadline":
                     String fullDL = sc.nextLine();
@@ -86,3 +82,5 @@ public class Duke {
         }
     }
 }
+
+//testing out this branch thingy
