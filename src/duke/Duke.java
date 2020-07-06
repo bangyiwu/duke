@@ -1,15 +1,7 @@
-package main.java;
-
-import main.java.Task;
+package duke;
 
 import java.io.*;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.text.ParseException;
-import java.time.LocalDate;
-import java.util.*;
 
 public class Duke {
     private Storage storage;
@@ -26,7 +18,7 @@ public class Duke {
         this.ui.uiRun(this.tasks, this.storage);
     }
     public static void main(String[] args) throws IOException, ParseException {
-        new Duke("src/main/java/todo").run();
+        new Duke("src/duke/text/todo").run();
     }
 }
 

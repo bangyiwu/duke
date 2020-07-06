@@ -1,4 +1,4 @@
-package main.java;
+package duke;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -33,7 +33,7 @@ public class Parser {
                 System.out.println("Gratz, you finished this dawg :");
                 System.out.println(task.toString());
                 break;
-            case "todo":
+            case "duke/text/todo":
                 String name = sc.nextLine();
                 try {
                     if (name.isEmpty()) {
