@@ -10,16 +10,19 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Storage {
-
+    String filepath;
+    public Storage(String filepath) {
+        this.filepath = filepath;
+    }
     public void write(Task task) throws IOException {
-        FileWriter todoWriter = new FileWriter("src/main/java/todo", true);
+        FileWriter todoWriter = new FileWriter(this.filepath, true);
         todoWriter.write(task.splitToString());
         todoWriter.close();
     }
 
     public TaskList load() throws IOException, ParseException {
         ArrayList<Task> todoList = new ArrayList<Task>();
-        BufferedReader reader = new BufferedReader(new FileReader("src/main/java/todo"));
+        BufferedReader reader = new BufferedReader(new FileReader(this.filepath));
         String line = null;
         while((line = reader.readLine()) != null) {
             String[] taskArr = line.split("/");
@@ -37,7 +40,7 @@ public class Storage {
     }
 
     public void overwrite(TaskList tl) throws IOException {
-        FileWriter todoWriter = new FileWriter("src/main/java/todo", false);
+        FileWriter todoWriter = new FileWriter(this.filepath, false);
         for (Task task: tl.todoList
              ) {
             todoWriter.write(task.splitToString());
