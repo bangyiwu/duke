@@ -32,14 +32,17 @@ public class Deadline extends Task {
         this.isDone = (done == "1");
     }
 
+
     /**
      * Display deadline
      * @return deadline in a string format
      */
     @Override
     public String toString() {
-        return "[D]" + super.toString() + " (by: " + by.format(DateTimeFormatter.ofPattern("MMM d yyyy")) + ")";
+        return "[D]" + super.toString() + " (by: " +
+                by.format(DateTimeFormatter.ofPattern("MMM d yyyy")) + ")";
     }
+
 
     /**
      * How deadline is written into the text file

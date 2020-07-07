@@ -24,6 +24,7 @@ public class Task {
         return (isDone ? "[✓]" : "[x]"); //return tick or X symbols
     }
 
+
     /**
      * Marks the task as done.
      */
@@ -35,11 +36,13 @@ public class Task {
      * @return 1 or 0 depending on if the task is done.
      */
     public int ifDone() {
-        if(this.isDone){
+        if (this.isDone) {
             return 1;
+        } else {
+            return 0;
         }
-        else return 0;
     }
+
     /**
      * Displays the task
      * @return the task in String form
