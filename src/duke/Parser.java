@@ -116,6 +116,20 @@ public class Parser {
                     System.out.println("   [ You have no deadlines by this day ]");
                 }
                 break;
+            case "find":
+                String keyword = sc.nextLine();
+                int findCount = 0;
+                System.out.println("Here are the matching tasks in your list:");
+                for (Task find: todoList) {
+                    if (find.description.contains(keyword)) {
+                        System.out.println(findCount + 1 + find.toString());
+                        findCount++;
+                    }
+                }
+                if (findCount == 0) {
+                    System.out.println("No related tasks found");
+                }
+                break;
             default:
                 System.out.println("whatchu talking about willis");
         }
