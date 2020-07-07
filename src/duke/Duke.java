@@ -1,6 +1,6 @@
 package duke;
 
-import java.io.*;
+import java.io.IOException;
 import java.text.ParseException;
 
 public class Duke {
@@ -17,6 +17,7 @@ public class Duke {
     public void run() throws IOException {
         this.ui.uiRun(this.tasks, this.storage);
     }
+
     public static void main(String[] args) throws IOException, ParseException {
         new Duke("src/duke/text/todo").run();
     }
