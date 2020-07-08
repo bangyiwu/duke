@@ -4,8 +4,8 @@ package duke;
  * The Task class is the parent class for deadline, event and todos.
  */
 public class Task {
-    protected String description;
-    protected boolean isDone;
+    public String description;
+    public boolean isDone;
 
     /**
      * Constructor for new Task.

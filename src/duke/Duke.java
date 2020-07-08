@@ -1,5 +1,7 @@
 package duke;
 
+import duke.Command.Command;
+
 import java.io.IOException;
 import java.text.ParseException;
 
@@ -24,7 +26,13 @@ public class Duke {
 
 
     private void run() throws IOException {
-        this.ui.uiRun(this.tasks, this.storage);
+        this.ui.showWelcome();
+        while (ui.sc.hasNext()) {
+            ui.showLine();
+            Command c = new Parser().parse(ui.sc.next());
+            c.execute(this.ui, tasks, storage);
+            ui.showLine();
+        }
     }
 
     public static void main(String[] args) throws IOException, ParseException {

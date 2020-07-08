@@ -8,7 +8,7 @@ import java.time.format.DateTimeFormatter;
  * It extends the parent class Task and has a LocalDate by to represent the specified deadline
  */
 public class Deadline extends Task {
-    protected LocalDate by;
+    public LocalDate by;
 
     /**
      * Constructor for new deadline
