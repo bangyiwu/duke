@@ -10,7 +10,7 @@ import java.text.ParseException;
  */
 
 public class Duke {
-    private Storage storage;
+    private duke.Storage storage;
     private TaskList tasks;
     private Ui ui;
 
